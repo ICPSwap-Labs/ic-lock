@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "LockServer": {
+      "main": "src/lock/server/LockServer.mo",
+      "type": "motoko"
+    },
+    "Test": {
+      "main": "src/test/Test.mo",
+      "type": "motoko"
+    },
+    "TestServer": {
+      "main": "src/test/TestServer.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.8.4",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
