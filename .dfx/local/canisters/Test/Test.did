@@ -1,0 +1,6 @@
+service : {
+  getLockNumber: () -> (nat) query;
+  getUnlockNumber: () -> (nat) query;
+  testLock: () -> (nat);
+  testWithoutLock: () -> (nat);
+}

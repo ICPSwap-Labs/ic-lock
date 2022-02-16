@@ -1,0 +1,8 @@
+service : {
+  del: (text) -> ();
+  get: (text) -> (bool);
+  setNx: (text) -> (record {
+                      status: bool;
+                      time: int;
+                    });
+}
