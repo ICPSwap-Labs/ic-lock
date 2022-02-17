@@ -6,7 +6,7 @@ import Int "mo:base/Int";
 import Time "mo:base/Time";
 import Error "mo:base/Error";
 import Debug "mo:base/Debug";
-import LockUtil "../util/LockUtil";
+import Lock "../lock/Lock";
 import TestServer "canister:TestServer";
 
 actor {
@@ -16,15 +16,15 @@ actor {
 
     public shared(msg) func testLock() :async Nat {
         try {
-            await LockUtil.lock("lockNumber");
+            await Lock.lock("lockNumber");
 
             var temp = lockNumber + 1;
             ignore await TestServer.testCall();
             lockNumber := temp;
 
-            await LockUtil.unlock("lockNumber");
+            await Lock.unlock("lockNumber");
         } catch (e) {
-            await LockUtil.unlock("lockNumber");
+            await Lock.unlock("lockNumber");
         };
         return lockNumber;
     };

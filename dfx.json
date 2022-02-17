@@ -1,7 +1,7 @@
 {
   "canisters": {
     "LockServer": {
-      "main": "src/lock/server/LockServer.mo",
+      "main": "src/lock/LockServer.mo",
       "type": "motoko"
     },
     "Test": {
