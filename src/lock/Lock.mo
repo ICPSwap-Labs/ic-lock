@@ -13,9 +13,9 @@ module {
         var startTime = Time.now();
 
         label lockW while(true) {
-            var lockR = await LockServer.setNx(key);
-            if(lockR.status) { break lockW; };
-            if((6000000000 + startTime) <= lockR.time) { throw Error.reject("" # key # " lock time out"); };
+            var lockR = await LockServer.lock(key);
+            if(lockR.state) { break lockW; };
+            if((3000000000 + startTime) <= lockR.time) { throw Error.reject("" # key # " lock time out"); };
 
             var internalWhileTimes = 0;
             while(internalWhileTimes < 1000){
@@ -25,20 +25,20 @@ module {
     };
 
     public func lockImmediately(key: Text): async Bool {
-        var lockR = await LockServer.setNx(key);
-        var lockStatus :Bool = lockR.status;
-        Debug.print("" # key # " lock status is " # debug_show(lockStatus));
-        return lockStatus;
+        var lockR = await LockServer.lock(key);
+        var lockState :Bool = lockR.state;
+        Debug.print("" # key # " lock state is " # debug_show(lockState));
+        return lockState;
     };
     
     public func unlock(key: Text): async () {
         Debug.print("" # key # " unlock");
-        await LockServer.del(key);
+        await LockServer.unlock(key);
     };
 
     public func isLocked(key: Text): async Bool {
-        var lockStatus :Bool = await LockServer.get(key);
-        Debug.print("" # key # " lock status is " # debug_show(lockStatus));
-        return lockStatus;
+        var lockState :Bool = await LockServer.getLockState(key);
+        Debug.print("" # key # " lock state is " # debug_show(lockState));
+        return lockState;
     };
 }
