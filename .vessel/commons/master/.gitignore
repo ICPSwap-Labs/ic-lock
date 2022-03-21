@@ -1,0 +1,19 @@
+# Various IDEs and Editors
+.vscode/
+.idea/
+**/*~
+.history/
+
+# Mac OSX temporary files
+.DS_Store
+**/.DS_Store
+
+# dfx temporary files
+.dfx
+.vessel
+
+# test files
+#test
+#dfx.json
+#package-set.dhall
+#vessel.dhall

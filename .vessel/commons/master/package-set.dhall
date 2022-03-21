@@ -8,14 +8,14 @@ let
     [
       { name = "base"
       , repo = "https://github.com/dfinity/motoko-base"
-      , version = "dfx-0.8.4"
+      , version = "dfx-0.7.2"
       , dependencies = [] : List Text
       }
-      ,{ dependencies = [ "base" ]
-      , name = "commons"
-      , repo = "https://github.com/ICPSwap-Labs/ic-commons.git"
-      , version = "master"
-      }
+    , { dependencies = [ "base" ]
+      , name = "sha224"
+      , repo = "https://github.com/flyq/motoko-sha224.git"
+      , version = "v0.1.0"
+      },
     ]
 let
   {- This is where you can override existing packages in the package-set
