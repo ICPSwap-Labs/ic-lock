@@ -1,0 +1,23 @@
+{
+  "canisters": {
+    "Lock": {
+      "main": "./../src/lock.mo",
+      "type": "motoko"
+    },
+    "Comp": {
+      "main": "src/Comp.mo",
+      "type": "motoko"
+    },
+    "Next": {
+      "main": "src/Next.mo",
+      "type": "motoko"
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
