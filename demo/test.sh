@@ -41,6 +41,9 @@ case $1 in
 install)
     install
     ;;
+seq)
+    seq_get
+    ;;
 curr)
     curr_get
     ;;
