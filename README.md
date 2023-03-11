@@ -49,15 +49,15 @@ function curr_get() {
 
 ## Solution
 
-We plan to use distributed locks to solve this problem.
+We plan to use distributed lock to solve this problem.
 
-Distributed locks have the following features:
+Distributed lock has the following features:
 
 - In a multi-canister environment, a lock can only be obtained by one request of a canister at a time
 - Highly available "acquire-and-release" locks
 - High-performance "acquire-and-release" locks
 - With lock failure mechanism, including automatic unlocking and deadlock prevention
-- with mechanism to prevent wrong unlocking
+- With mechanism to prevent wrong unlocking
 - With blocking feature, it automatically waits when the lock is not obtained, and automatically unlocks when the waiting time expires
 
 ![diagram](./images/lock.jpg)
