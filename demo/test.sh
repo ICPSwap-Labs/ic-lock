@@ -41,13 +41,13 @@ case $1 in
 install)
     install
     ;;
-seq)
+seq_get)
     seq_get
     ;;
-curr)
+curr_get)
     curr_get
     ;;
-withLock)
+curr_get_with_lock)
     curr_get_with_lock
     ;;
 lock)
